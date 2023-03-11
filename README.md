@@ -92,6 +92,7 @@ data = models.IntegerField(null=True,blank=True)
 命令一樣
 python manage.py makemigrations
 python manage.py migrate
+<<<<<<< HEAD
 
 #測試ORM操作標中的數據
     # 1.新增
@@ -120,3 +121,5 @@ python manage.py migrate
     #4.更新數據
     # UserInfo.objects.all().update(age=28)
     UserInfo.objects.filter(id=1).update(age=18)
+=======
+>>>>>>> 598779a1fc008864a14f3114384bf2f0501cedfb
