@@ -6,7 +6,7 @@ pip install django
 
 python manage.py runserver 啟動server
 python manage.py 可以看到可以執行的指令
-2.python manage.py startapp app01(不確定)
+2.python manage.py startapp app01
 
 settings.py 項目配置        常常操作
 urls.py URL和函數的對應關係  常常操作
