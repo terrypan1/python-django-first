@@ -6,6 +6,8 @@ pip install django
 
 python manage.py runserver 啟動server
 python manage.py 可以看到可以執行的指令
+
+
 2.python manage.py startapp app01
 
 settings.py 項目配置        常常操作
