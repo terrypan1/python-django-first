@@ -1,7 +1,9 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse ,redirect
 from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
-
+#json格式發回去的方式
+from django.core import serializers
+# from django.http import HttpResponse
 
 def index(request):
     return HttpResponse("歡迎使用")
@@ -88,3 +90,28 @@ def orm(request):
 
 
     return HttpResponse("成功")
+@csrf_exempt
+def info_list(request):
+    #1.獲取數據庫中所有的用戶信息
+    #[物件，物件，物件]
+    data_list = UserInfo.objects.all()
+    print(data_list)
+
+    return render(request,"info_list.html",{"data_list":data_list})
+    # data = serializers.serialize('json', data_list)
+    # return HttpResponse(data, content_type='application/json')
+
+@csrf_exempt
+def info_add(request):
+    if request.method=="GET":
+        return render(request,'info_add.html')
+    #獲取用戶提交的數據
+    user = request.POST.get("user")
+    pwd = request.POST.get("password")
+    age = request.POST.get("age")
+
+    #添加到數據庫
+    UserInfo.objects.create(name=user,password=pwd,age=age)
+    #return HttpResponse("添加成功")
+
+    return redirect('http://127.0.0.1:8000/info/list/')

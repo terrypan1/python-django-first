@@ -29,5 +29,8 @@ urlpatterns = [
     path('user/add/',views.user_add),
     path('something/',views.something),
     path('login/',views.login),
-    path('orm/',views.orm)
+    path('orm/',views.orm),
+    ##案例:用戶管理+連接API
+    path('info/list/',views.info_list),
+    path('info/add/',views.info_add)
 ]

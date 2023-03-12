@@ -121,5 +121,20 @@ python manage.py migrate
     #4.更新數據
     # UserInfo.objects.all().update(age=28)
     UserInfo.objects.filter(id=1).update(age=18)
-=======
->>>>>>> 598779a1fc008864a14f3114384bf2f0501cedfb
+
+#案例:用戶管理+連接API
+
+1.展示用戶列表
+    --url
+    --函數
+2.添加用戶
+    --url
+    --函數
+    GET 看到頁面輸入內容
+    POST 提交，寫入到數據庫
+
+###第三方庫下載
+pip list 可以看當前環境下的第三方庫
+pip freeze > requirements.txt 把第三方庫的環境輸出到 requirements.txt
+pip freeze --local > requirements.txt 將當前的第三方庫資訊輸出道requirements.txt
+pip install -r requirements.txt 下載第三方庫
