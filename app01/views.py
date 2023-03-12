@@ -115,3 +115,9 @@ def info_add(request):
     #return HttpResponse("添加成功")
 
     return redirect('http://127.0.0.1:8000/info/list/')
+
+
+@csrf_exempt
+def weather(request):
+     if request.method=="GET":
+        return render(request,'weather.html')

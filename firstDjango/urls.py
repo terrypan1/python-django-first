@@ -32,5 +32,6 @@ urlpatterns = [
     path('orm/',views.orm),
     ##案例:用戶管理+連接API
     path('info/list/',views.info_list),
-    path('info/add/',views.info_add)
+    path('info/add/',views.info_add),
+    path('weather/',views.weather)
 ]
